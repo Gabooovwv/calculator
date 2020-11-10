@@ -1,0 +1,16 @@
+<main>
+  <form id="calculator">
+    <input type="text" value="{{inputValue}}" />
+    <div id="numbers">
+      <button
+        *ngFor="let item of calculatorButtons"
+        (click)="clickHandler(item.value)"
+        (keyup)="onKey($event)"
+        type="button"
+        class="{{item.className ? item.className : ''}}"
+        disabled="{{item.disabled}}"
+      >{{item.value}}</button>
+    </div>
+  </form>
+  <div id="log">{{logMessage}}</div>
+</main>
